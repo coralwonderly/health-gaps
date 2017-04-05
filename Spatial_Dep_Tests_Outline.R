@@ -32,7 +32,7 @@ print (neighbors.nb, zero.policy = TRUE)
 
 ## Creating matrix of inverse distance weights
 
-d <- dnearneigh(coordinates(Tracts3),0,16093.4) #10 miles
+d <- dnearneigh(coordinates(Tracts3),0,2) #I believe it is using degree distance 
 dlist <- nbdists(d, coordinates(Tracts3))
 idlist <- lapply(dlist, function(x) 1/x)           #inverse distance
 w <- nb2listw(d, glist = idlist, style ="W")     # "W" style is the indicator for row standardization
